@@ -35,10 +35,14 @@ $(document).ready(function(){
 			}
 		});
     
-	$('.hmbg').click(function(){
+	$('.hmbg').click(function(event){
+		event.preventDefault();
+		event.stopPropagation();
     $('.menu').toggleClass('is-active');
-        
-});
+    	$(document).click(function(){
+        	$('.menu').removeClass('is-active');
+        })       
+	});
     
 });
 
